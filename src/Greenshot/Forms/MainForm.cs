@@ -1276,6 +1276,7 @@ namespace Greenshot.Forms
             BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureLastRegion(false); });
         }
 
+        // th find you
         private void Contextmenu_CaptureWindow_Click(object sender, EventArgs e)
         {
             BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureWindowInteractive(false); });

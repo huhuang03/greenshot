@@ -22,3 +22,12 @@ Being easy to understand and configurable, Greenshot is an efficient tool for pr
 About this repository
 ---------------------
 This repository is for Greenshot 1.3, currently in development, but is the next planed release
+
+* caputre window
+capturemenu_captureWindow
+ ff
+
+
+* links
+https://www.withcoder.com/articles/server_side/net/403.html
+https://stackoverflow.com/questions/17946380/how-to-add-contextmenu-to-the-system-tray-icon-programmatically
