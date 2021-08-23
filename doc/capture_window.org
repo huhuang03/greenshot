@@ -1,0 +1,37 @@
+* caputre window
+#+BEGIN_SRC c
+// captureMouse = flase
+public static void CaptureWindowInteractive(bool captureMouse)
+{
+    // th 1 here.
+    using CaptureHelper captureHelper = new CaptureHelper(CaptureMode.Window, captureMouse);
+    captureHelper.MakeCapture();
+}
+#+END_SRC
+
+** Capture
+#+BEGIN_SRC c
+  public Caputre() {
+      _screenBounds = WindowCapture.GetScreenBounds();
+      _captureDetails = new CaptureDetails();
+  }
+#+END_SRC
+
+            using CaptureHelper captureHelper = new CaptureHelper(CaptureMode.Window, captureMouse);
+            captureHelper.MakeCapture();
+
+
+private Thread CaptureHelper.PrepareForCpatureWithFeedback() {
+}
+
+IntPtr appLauncher = User32.FindWindow(ApplauncherClass, null);
+if (appLauncher != IntPtr.Zero)
+{
+    return new WindowDetails(appLauncher);
+}
+
+
+
+* links
+https://www.withcoder.com/articles/server_side/net/403.html
+https://stackoverflow.com/questions/17946380/how-to-add-contextmenu-to-the-system-tray-icon-programmatically

@@ -163,6 +163,7 @@ namespace Greenshot.Helpers
 
         public static void CaptureWindowInteractive(bool captureMouse)
         {
+            // th 1 here.
             using CaptureHelper captureHelper = new CaptureHelper(CaptureMode.Window, captureMouse);
             captureHelper.MakeCapture();
         }
@@ -561,6 +562,7 @@ namespace Greenshot.Helpers
             _windows = new List<WindowDetails>();
 
             // If the App Launcher is visible, no other windows are active
+            // what's the mean of getAppLauncher?
             WindowDetails appLauncherWindow = WindowDetails.GetAppLauncher();
             if (appLauncherWindow != null && appLauncherWindow.Visible)
             {
