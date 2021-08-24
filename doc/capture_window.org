@@ -1,3 +1,25 @@
+* key code
+#+begin_src cpp
+  // CpatureForm
+  // called by Timer_Tick
+  protected override void Animate()
+  {
+      lock (_windows)
+      {
+          foreach (var window in _windows)
+          {
+              if (!window.Contains(cursorPosition))
+              {
+                  continue;
+              }
+
+              // Only go over the children if we are in window mode
+              _selectedCaptureWindow = CaptureMode.Window == _captureMode ? window.FindChildUnderPoint(cursorPosition) : window;
+              break;
+          }
+      }
+  }
+#+end_src
 * caputre window
 #+BEGIN_SRC c
 // captureMouse = flase
