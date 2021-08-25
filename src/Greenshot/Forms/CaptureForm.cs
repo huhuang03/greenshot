@@ -182,6 +182,7 @@ namespace Greenshot.Forms
             // Initialize the animations, the window capture zooms out from the cursor to the window under the cursor
             if (_captureMode == CaptureMode.Window)
             {
+                Log.Debug($"_captureRectangle: {_captureRect}");
                 _windowAnimator = new RectangleAnimator(new Rectangle(_cursorPos, Size.Empty), _captureRect, FramesForMillis(700), EasingType.Quintic, EasingMode.EaseOut);
             }
 
@@ -563,10 +564,13 @@ namespace Greenshot.Forms
             _selectedCaptureWindow = null;
             lock (_windows)
             {
+                // you sorted??
                 foreach (var window in _windows)
                 {
                     if (!window.Contains(cursorPosition))
                     {
+                        // window.Text is not right?
+                        Log.Debug($"find the window {window.Text}, win hwnd: {window.Handle}");
                         continue;
                     }
 

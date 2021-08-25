@@ -1,35 +1,21 @@
 * caputre window
-#+BEGIN_SRC c
-// captureMouse = flase
-public static void CaptureWindowInteractive(bool captureMouse)
+using CaptureForm captureForm = new CaptureForm(_capture, _windows);
+// Make sure the form is hidden after showing, even if an exception occurs, so all errors will be shown
+DialogResult result;
+try
 {
-    // th 1 here.
-    using CaptureHelper captureHelper = new CaptureHelper(CaptureMode.Window, captureMouse);
-    captureHelper.MakeCapture();
+    var mainForm = SimpleServiceProvider.Current.GetInstance<IGreenshotMainForm>();
+    result = captureForm.ShowDialog(mainForm);
 }
-#+END_SRC
-
-** Capture
-#+BEGIN_SRC c
-  public Caputre() {
-      _screenBounds = WindowCapture.GetScreenBounds();
-      _captureDetails = new CaptureDetails();
-  }
-#+END_SRC
-
-            using CaptureHelper captureHelper = new CaptureHelper(CaptureMode.Window, captureMouse);
-            captureHelper.MakeCapture();
-
-
-private Thread CaptureHelper.PrepareForCpatureWithFeedback() {
-}
-
-IntPtr appLauncher = User32.FindWindow(ApplauncherClass, null);
-if (appLauncher != IntPtr.Zero)
+finally
 {
-    return new WindowDetails(appLauncher);
+    captureForm.Hide();
 }
 
+if (result != DialogResult.OK) return;
+
+// The result is the result window.
+_selectedCaptureWindow = captureForm.SelectedCaptureWindow;
 
 
 * links

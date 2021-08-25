@@ -102,6 +102,7 @@ namespace Greenshot.Base.Core
         /// This method will capture the current Cursor by using User32 Code
         /// </summary>
         /// <returns>A Capture Object with the Mouse Cursor information in it.</returns>
+        /// Why you capture the cursor?
         public static ICapture CaptureCursor(ICapture capture)
         {
             Log.Debug("Capturing the mouse cursor.");

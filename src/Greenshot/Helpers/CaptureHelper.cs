@@ -739,7 +739,7 @@ namespace Greenshot.Helpers
                 DoCaptureFeedback();
             }
 
-            Log.Debug("A capture of: " + _capture.CaptureDetails.Title);
+            // Log.Debug("A capture of: " + _capture.CaptureDetails.Title + ", Handler: " + _capture.CaptureDetails.);
 
             // check if someone has passed a destination
             if (_capture.CaptureDetails.CaptureDestinations == null || _capture.CaptureDetails.CaptureDestinations.Count == 0)
@@ -1175,8 +1175,11 @@ namespace Greenshot.Helpers
             }
         }
 
+        // what's this?
         private void CaptureWithFeedback()
         {
+            // what _capture is?
+            // and what _windows is?
             using CaptureForm captureForm = new CaptureForm(_capture, _windows);
             // Make sure the form is hidden after showing, even if an exception occurs, so all errors will be shown
             DialogResult result;
@@ -1192,7 +1195,10 @@ namespace Greenshot.Helpers
 
             if (result != DialogResult.OK) return;
 
+            // The result is the result window.
             _selectedCaptureWindow = captureForm.SelectedCaptureWindow;
+            // yo do that??
+            Log.Debug($"selectedCaptureWindow: {_selectedCaptureWindow}");
             _captureRect = captureForm.CaptureRectangle;
             // Get title
             if (_selectedCaptureWindow != null)
