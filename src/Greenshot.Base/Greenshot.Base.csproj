@@ -15,4 +15,7 @@
   <ItemGroup>
     <EmbeddedResource Include="log4net-embedded.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
 </Project>

@@ -1186,12 +1186,16 @@ namespace Greenshot.Helpers
             try
             {
                 var mainForm = SimpleServiceProvider.Current.GetInstance<IGreenshotMainForm>();
+                // why this is the key function, and what did you do?
+                // mainFrom is the owner
+                // result = captureForm.ShowDialog();
                 result = captureForm.ShowDialog(mainForm);
             }
             finally
             {
                 captureForm.Hide();
             }
+            // return;
 
             if (result != DialogResult.OK) return;
 
